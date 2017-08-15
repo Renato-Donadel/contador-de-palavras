@@ -9,14 +9,81 @@
 
 int main() {
 
-  char c;
-
-  c = 1;
-
-  while (c != '\n') {
-    scanf("%c", &c);
+  char frase[1000];
+  int i, a=0, flag=0, total=0, d=0;
+  fgets(frase,101,stdin);
+  
+  for (i=0;frase[i]!= '\0'; i++){
+      if (!flag && frase[i]!=' '){
+          flag=1;
+          total++;
+      }
+      else if(flag && frase[i]==' '){
+          flag=0;
+      }
+  }
+  for (i=0;frase[i]!= '\0'; i++){
+    if(frase[i]=='.'){
+         a++;
+         i++;
+         if(a>0 && frase[i]!=' '){
+              total++;
+              a=0;
+         }
+    }
+  }
+ for (i=0;frase[i]!= '\0'; i++){
+    if(frase[i]==','){
+         d++;
+         i++;
+         if(d>0 && frase[i]!=' '){
+              total++;
+              a=0;
+         }
+    }
+ }
+ for (i=0;frase[i]!= '\0'; i++){
+    if(frase[i]=='-'){
+         a++;
+         i++;
+         if(a>0 && frase[i]!=' '){
+               total++;
+               a=0;
+         }
+    }
+ }
+for (i=0;frase[i]!= '\0'; i++){
+    if(frase[i]==' '){
+         a++;
+         i++;
+         if(a>0 && frase[i]=='.'){
+              total--;
+              a=0;
+         }
+    }
+  }
+for (i=0;frase[i]!= '\0'; i++){
+    if(frase[i]==' '){
+         a++;
+         i++;
+         if(a>0 && frase[i]==','){
+              total--;
+              a=0;
+         }
+    }
+  }
+for (i=0;frase[i]!= '\0'; i++){
+    if(frase[i]==' '){
+         a++;
+         i++;
+         if(a>0 && frase[i]=='-'){
+              total--;
+              a=0;
+         }
+    }
   }
 
-  printf("1\n");
+  
+  printf("%d\n", total);
   return 0;
 }
