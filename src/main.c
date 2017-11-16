@@ -21,7 +21,7 @@ int main() {
       else if(flag && frase[i]==' '){
           flag=0;
       }
-  }
+  } /*esse laço vai contemplar o caso geral*/
   for (i=0;frase[i]!= '\0'; i++){
     if(frase[i]=='.'){
          a++;
@@ -31,7 +31,7 @@ int main() {
               a=0;
          }
     }
-  }
+  } /*esse laço é para frases com "."*/
  for (i=0;frase[i]!= '\0'; i++){
     if(frase[i]==','){
          d++;
@@ -41,7 +41,7 @@ int main() {
               a=0;
          }
     }
- }
+ } /*esse laço é para frases com ","*/
  for (i=0;frase[i]!= '\0'; i++){
     if(frase[i]=='-'){
          a++;
@@ -51,7 +51,7 @@ int main() {
                a=0;
          }
     }
- }
+ } /*esse laço é para frases com "-"*/
 for (i=0;frase[i]!= '\0'; i++){
     if(frase[i]==' '){
          a++;
@@ -61,7 +61,7 @@ for (i=0;frase[i]!= '\0'; i++){
               a=0;
          }
     }
-  }
+  } /*esses três laços são para frases com " "*/
 for (i=0;frase[i]!= '\0'; i++){
     if(frase[i]==' '){
          a++;
@@ -71,7 +71,7 @@ for (i=0;frase[i]!= '\0'; i++){
               a=0;
          }
     }
-  }
+  } /*esses três laços são para frases com " "*/
 for (i=0;frase[i]!= '\0'; i++){
     if(frase[i]==' '){
          a++;
@@ -81,7 +81,7 @@ for (i=0;frase[i]!= '\0'; i++){
               a=0;
          }
     }
-  }
+  } /*esses três laços são para frases com " "*/
 
   
   printf("%d\n", total);
